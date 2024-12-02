@@ -27,8 +27,8 @@
 % Custom References Header (No Underline)
 \makeatletter
 \patchcmd{\thebibliography}
-  {\section*{\refname}}
-  {\section*{\fontsize{11pt}{13pt}\selectfont\bfseries\MakeUppercase{References:}}}
+  {\section*{\refname}} % Replace default "References" header
+  {\noindent\fontsize{11pt}{13pt}\selectfont\bfseries\MakeUppercase{References:}\par\vspace{1ex}}
   {}{}
 \makeatother
 
