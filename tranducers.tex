@@ -5,7 +5,8 @@
 \usepackage{graphicx} % Graphics
 \usepackage{fancyhdr} % Custom headers
 \usepackage{textcase} % Uppercase handling
-\usepackage[margin=1in]{geometry} % A4 margins
+\usepackage[table,xcdraw]{xcolor} % Color support
+\usepackage[margin=1in, headheight=14pt, includehead, top=0.5in]{geometry} % A4 margins
 \usepackage[font=it, size=small]{caption} % Italic 10pt captions
 \usepackage{etoolbox} % Command patching for formatting
 
@@ -13,6 +14,7 @@
 \newcommand{\customtitle}[1]{%
     {\fontsize{12pt}{14pt}\selectfont\bfseries\MakeTextUppercase{#1}\par}
 }
+
 
 % Section Header Redefinition (Underline for all except References)
 \makeatletter
@@ -48,24 +50,40 @@
     \normalfont\bfseries % Bold abstract text
 }{}
 
-% Title and Author
-\title{\customtitle{Your Paper Title Here}}
+% Read Word Count from wordcount.txt
+%#!/bin/env zsh
+%pdftk transducers.pdf cat 1 output firstpage.pdf
+%pdftotext firstpage.pdf -layout firstpage.tex
+%texcount -inc -sum firstpage.tex > wordcount.txt
+%
+\newcommand{\wordcount}{%
+    \input{wordcount.txt}
+}
 
+% Title and Author
+\title{\customtitle{TRANSDUCERS 2025 CONFERENCE SAMPLE ABSTRACT AND INSTRUCTIONS FOR ABSTRACT PREPARATION}}
 \author{
-    \IEEEauthorblockN{Author Name\IEEEauthorrefmark{1}, Co-Author Name\IEEEauthorrefmark{2}, Another Co-Author\IEEEauthorrefmark{3}}
-    \IEEEauthorblockA{\IEEEauthorrefmark{1}Affiliation 1, City, Country\\Email: author1@example.com}
-    \and
-    \IEEEauthorblockA{\IEEEauthorrefmark{2}Affiliation 2, City, Country\\Email: author2@example.com}
-    \and
+\parbox{\textwidth}{%
+	\begin{center}
+%	\textcolor{red}{\textbf{REMEMBER THAT NO NAME OF AUTHORS AND/OR INSTITUTIONS SHOULD APPEAR ON THIS ABSTRACT, AS IT IS PREPARED FOR A DOUBLE-BLIND REVIEW (DBR) PROCESS!}} 
+	\end{center}
+}
+%    \IEEEauthorblockN{Author Name\IEEEauthorrefmark{1}, Co-Author Name\IEEEauthorrefmark{2}, Another Co-Author\IEEEauthorrefmark{3}}
+ %   \IEEEauthorblockA{\IEEEauthorrefmark{1}Affiliation 1, City, Country\\Email: author1@example.com}
+  %  \and
+ %   \IEEEauthorblockA{\IEEEauthorrefmark{2}Affiliation 2, City, Country\\Email: author2@example.com}
+  %  \and
    % \IEEEauthorblockA{\IEEEauthorrefmark{3}Affiliation 3, City, Country\\Email: author3@example.com}
 }
 
 % First Page Header
 \fancypagestyle{firstpage}{
-    \fancyhf{}
-    \renewcommand{\headrulewidth}{0pt}
-    \fancyhead[L]{\small 9. Thermal management}
-    \fancyhead[R]{\small 0000}
+    \fancyhf{} % Clear header and footer
+    \renewcommand{\headrulewidth}{0pt} % Remove header rule
+    \fancyhead[L]{\small 9. Thermal management\\(please choose category from list)}
+    \fancyhead[C]{poster\\(if requesting poster)}
+    \fancyhead[R]{\small 0000\\((Confirmation from Website))}
+    %\addtolength{\headsep}{-0.5in} % Move header upwards
 }
 
 \begin{document}
@@ -75,19 +93,34 @@
 \thispagestyle{firstpage}
 
 % Abstract Section
-\begin{abstract}
-This is the abstract text. It will appear in bold to emphasize its importance and match the section format.
-\end{abstract}
+%\begin{abstract}
+%This is the abstract text. It will appear in bold to emphasize its importance and match the section format.
+%\end{abstract}
 
 % Main Sections
-\section*{Introduction}
-The introduction should provide a brief context for your work, highlighting the motivation, challenges, and objectives \cite{sample1}.
-
+\section*{Novelty/Progress Claims}
+\textbf{
+Write here, in bold, your specific qualitative and/or quantitative novelty claim(s): what you have achieved for the first time, and/or how your work advances the state of research in the field. For example: “This paper reports a miniaturized electrochemical sensor with a three-fold reduction in cross-sensitivity compared to state of the art, which will allow, for the first time, minimally invasive in-vivo detection of biomarkers.” Work that is not original or that has been presented in other international conferences or publications will not be accepted unless considerable progress has been achieved.
+}
 \section*{Methodology}
-Describe your methodology in detail, including any relevant equations, diagrams, or figures.
+It is also important to identify how the new work differs from previous work of your own group and of other groups, especially work presented at recent and upcoming international meetings. For example: "Prior work on a similar fabrication process was reported at Transducers 2023\cite{sample2}.'' The reference is referred in the Reference section as an "Unpublished reference".  On the abstract submission website, there is a specific input box, entitled "Unpublished references", in which you must write the full references to any unpublished work, for example "S. Ample et al., "Publication Title", accepted at MEMS 2024.\cite{sample4}" Upon request from the reviewers, the conference organizers' administrative staff will retrieve the unpublished manuscripts, blind them by hand, and make them available to the reviewers.
 
-\section*{Results}
-Present the findings of your work with relevant figures, tables, and analysis.
+\section*{Description of the New Method or System}
+Your document is expected to have a total length of two (2) pages.  The first page should include title, technical description, and word count.  The second page should include figures and photographs. References may be on either page.  Text on the first page should be limited to 600 words.  The authors' preference for poster presentation (if applicable) should appear in top center as well as the appropriate abstract category in the upper left-hand corner.
+This format is to be used since the extended paper for the Conference Technical Digest will have a similar layout.  The Digest will be published in A4 format, set up the layout in this format to 20.98 cm x 29.69 cm (8.26” x 11.69”). You should also double check that your final PDF file is A4.  In this format, define 1.9 cm (0.75”) wide left and right margins.  The bottom and top margins must be 2.54 cm (1”). 
+Define a two-column layout, with a space of 0.635 cm (0.25”) between columns.  The title section should be centered above both columns. Please use Times New Roman throughout the entire manuscript.  The following formats should be used as illustrated by this sample abstract:  
+
+All figures and illustrations may be in color and should be placed as close to their mention as possible. 
+For equation variables, numbers, physical symbols, indexes etc. follow IEEE usage, e.g. the Journal of Microelectromechanical Systems.  Use this Journal for referencing style and formats for referencing as shown in this sample abstract as illustrated for contributions to conference proceedings\cite{sample2}, journals \cite{sample1}, and books \cite{sample3}.
+
+
+\section*{Experimental Results}
+Clearly outline the specific results, whether experimental or theoretical.  Make sure that every novelty/claim, is supported by appropriate theoretical or experimental results. Reviewers will mainly judge your abstract based on how the experimental/theoretical results support the novelty/claims. These results can be supported by figures and/or tables on page two of the abstract.
+\\
+\\
+\textbf{Word Count: {\wordcount}}
+
+\newpage
 
 % Figures and Tables
 \begin{figure}[h]
@@ -110,12 +143,7 @@ Present the findings of your work with relevant figures, tables, and analysis.
     \label{tab:example}
 \end{table}
 
-\section*{Conclusion}
-Summarize the key points and outcomes of your research.
 
-% Acknowledgment Section
-\section*{Acknowledgment}
-Acknowledge any collaborators, funding sources, or institutions that supported your work.
 
 % References
 \bibliographystyle{IEEEtran}
