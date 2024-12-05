@@ -6,9 +6,10 @@
 \usepackage{fancyhdr} % Custom headers
 \usepackage{textcase} % Uppercase handling
 \usepackage[table,xcdraw]{xcolor} % Color support
-\usepackage[margin=1in, headheight=14pt, includehead, top=0.5in]{geometry} % A4 margins
+\usepackage[margin=0.75in, headheight=14pt, includehead, top=0.5in]{geometry} % A4 margins
 \usepackage[font=it, size=small]{caption} % Italic 10pt captions
 \usepackage{etoolbox} % Command patching for formatting
+\usepackage{tabularx} % For flexible table width
 
 % Title Customization
 \newcommand{\customtitle}[1]{%
@@ -50,6 +51,7 @@
     \normalfont\bfseries % Bold abstract text
 }{}
 
+
 % Read Word Count from wordcount.txt
 %#!/bin/env zsh
 %pdftk transducers.pdf cat 1 output firstpage.pdf
@@ -59,7 +61,6 @@
 \newcommand{\wordcount}{%
     \input{wordcount.txt}
 }
-
 % Title and Author
 \title{\customtitle{TRANSDUCERS 2025 CONFERENCE SAMPLE ABSTRACT AND INSTRUCTIONS FOR ABSTRACT PREPARATION}}
 \author{
@@ -67,13 +68,16 @@
 	\begin{center}
 	\textcolor{red}{\textbf{\small REMEMBER THAT NO NAME OF AUTHORS AND/OR INSTITUTIONS SHOULD APPEAR ON THIS ABSTRACT, AS IT IS PREPARED FOR A DOUBLE-BLIND REVIEW (DBR) PROCESS!}} 
 	\end{center}
+	
 }
+
 %    \IEEEauthorblockN{Author Name\IEEEauthorrefmark{1}, Co-Author Name\IEEEauthorrefmark{2}, Another Co-Author\IEEEauthorrefmark{3}}
  %   \IEEEauthorblockA{\IEEEauthorrefmark{1}Affiliation 1, City, Country\\Email: author1@example.com}
   %  \and
  %   \IEEEauthorblockA{\IEEEauthorrefmark{2}Affiliation 2, City, Country\\Email: author2@example.com}
   %  \and
    % \IEEEauthorblockA{\IEEEauthorrefmark{3}Affiliation 3, City, Country\\Email: author3@example.com}
+   \vspace{-1.5cm} % Reduce space after the block
 }
 
 % First Page Header
@@ -87,31 +91,43 @@
 }
 
 \begin{document}
-
 % Title Page
 \maketitle
 \thispagestyle{firstpage}
-
 % Abstract Section
 %\begin{abstract}
 %This is the abstract text. It will appear in bold to emphasize its importance and match the section format.
 %\end{abstract}
-
 % Main Sections
 \section*{Novelty/Progress Claims}
 \textbf{
 Write here, in bold, your specific qualitative and/or quantitative novelty claim(s): what you have achieved for the first time, and/or how your work advances the state of research in the field. For example: “This paper reports a miniaturized electrochemical sensor with a three-fold reduction in cross-sensitivity compared to state of the art, which will allow, for the first time, minimally invasive in-vivo detection of biomarkers.” Work that is not original or that has been presented in other international conferences or publications will not be accepted unless considerable progress has been achieved.
 }
 \section*{Methodology}
-It is also important to identify how the new work differs from previous work of your own group and of other groups, especially work presented at recent and upcoming international meetings. For example: "Prior work on a similar fabrication process was reported at Transducers 2023\cite{sample2}.'' The reference is referred in the Reference section as an "Unpublished reference".  On the abstract submission website, there is a specific input box, entitled "Unpublished references", in which you must write the full references to any unpublished work, for example "S. Ample et al., "Publication Title", accepted at MEMS 2024.\cite{sample4}" Upon request from the reviewers, the conference organizers' administrative staff will retrieve the unpublished manuscripts, blind them by hand, and make them available to the reviewers.
+It is also important to identify how the new work differs from previous work of your own group and of other groups, especially work presented at recent and upcoming international meetings. For example: "Prior work on a similar fabrication process was reported at Transducers 2023\cite{author2015mems}.'' The reference is referred in the Reference section as an "Unpublished reference".  On the abstract submission website, there is a specific input box, entitled "Unpublished references", in which you must write the full references to any unpublished work, for example "S. Ample et al., "Publication Title", accepted at MEMS 2024.\cite{unpublished_reference}" Upon request from the reviewers, the conference organizers' administrative staff will retrieve the unpublished manuscripts, blind them by hand, and make them available to the reviewers.
 
 \section*{Description of the New Method or System}
 Your document is expected to have a total length of two (2) pages.  The first page should include title, technical description, and word count.  The second page should include figures and photographs. References may be on either page.  Text on the first page should be limited to 600 words.  The authors' preference for poster presentation (if applicable) should appear in top center as well as the appropriate abstract category in the upper left-hand corner.
 This format is to be used since the extended paper for the Conference Technical Digest will have a similar layout.  The Digest will be published in A4 format, set up the layout in this format to 20.98 cm x 29.69 cm (8.26” x 11.69”). You should also double check that your final PDF file is A4.  In this format, define 1.9 cm (0.75”) wide left and right margins.  The bottom and top margins must be 2.54 cm (1”). 
 Define a two-column layout, with a space of 0.635 cm (0.25”) between columns.  The title section should be centered above both columns. Please use Times New Roman throughout the entire manuscript.  The following formats should be used as illustrated by this sample abstract:  
 
+\medskip
+
+\noindent
+\hspace*{-0.1in}  %needed to align as close as possible to transducers template
+\begin{tabular}{ll}
+{\fontsize{12pt}{14pt}\selectfont \textbf{•TITLE:}} & {\fontsize{12pt}{14pt}\selectfont \textbf{12 POINTS, BOLD, }} \\ 
+& {\fontsize{12pt}{14pt}\selectfont \textbf{ALL CAPITALS }} \\
+•\underline{\textbf{Section Header}} &\underline{\textbf{11 points, bold, underlined}}     \\ 
+•Text body:&11 points, regular, all\\ 
+&paragraphs indented to 0.25"\\
+{\fontsize{10pt}{12pt}\selectfont \textit{•Figure captions:}} & {\fontsize{10pt}{12pt}\selectfont \textit{10 points, italic}} \\
+{\fontsize{10pt}{12pt}\selectfont \textit{•Table captions:}} & {\fontsize{10pt}{12pt}\selectfont \textit{10 points, italic}} \\
+•References:&11 points, regular, numbered\\ 
+\end{tabular}
+
 All figures and illustrations may be in color and should be placed as close to their mention as possible. 
-For equation variables, numbers, physical symbols, indexes etc. follow IEEE usage, e.g. the Journal of Microelectromechanical Systems.  Use this Journal for referencing style and formats for referencing as shown in this sample abstract as illustrated for contributions to conference proceedings\cite{sample2}, journals \cite{sample1}, and books \cite{sample3}.
+For equation variables, numbers, physical symbols, indexes etc. follow IEEE usage, e.g. the Journal of Microelectromechanical Systems.  Use this Journal for referencing style and formats for referencing as shown in this sample abstract as illustrated for contributions to conference proceedings\cite{senturia2003mems}, journals \cite{tsuchiya1998specimen}, and books \cite{crichton2002prey}.
 
 
 \section*{Experimental Results}
