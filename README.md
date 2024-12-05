@@ -3,7 +3,7 @@
 How much do I hate MSWord?  Enough to spend a day making a template in LaTeX.
 
 
-This work is a quick and dirty hack to get a template that works for Transducers 2025. The motivation is that I couldn't get MSWord to do what I wanted, and I honestly have no idea how anyone uses that tool.  Particularly with references.  I used the IEEE conference template as a basis and then overrode everything.
+This work is a quick and dirty hack to get a template that works for Transducers 2025 (https://www.transducers2025.org/). The motivation is that I couldn't get MSWord to do what I wanted, and I honestly have no idea how anyone uses that tool.  Particularly with references.  I used the IEEE conference template as a basis and then overrode everything.
 
 Known issues with this template:
 
